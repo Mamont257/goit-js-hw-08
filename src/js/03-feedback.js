@@ -9,7 +9,7 @@ const { email, message } = form.elements;
 const memory = localStorage.getItem("feedback-form-state");
 
 if (!memory) {
-    form.addEventListener("input", new Throttle(onInput, 1000));
+    form.addEventListener("input", new Throttle(onInput, 500));
 } else {
     const currentValue = JSON.parse(memory);
     email.value = currentValue.email;
