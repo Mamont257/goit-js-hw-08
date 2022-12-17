@@ -7,7 +7,6 @@ const obj = {};
 const { email, message } = form.elements;
 
 const memory = localStorage.getItem("feedback-form-state");
-// console.log(memory);
 
 if (!memory) {
     form.addEventListener("input", new Throttle(onInput, 1000));
@@ -19,8 +18,6 @@ if (!memory) {
 
 
 function onInput(evt) {
-    // evt.preventDefault();
-    // console.dir(evt.target.value.trim());
     if (evt.target.name === "email") {
         obj.email = evt.target.value.trim();
         localStorage.setItem("feedback-form-state", JSON.stringify(obj))
@@ -28,15 +25,16 @@ function onInput(evt) {
         obj.message = evt.target.value.trim();
         localStorage.setItem("feedback-form-state", JSON.stringify(obj))
     }
-    // console.log(obj);
-    // console.log(localStorage.getItem("feedback-form-state"));
 };
 
 function onSubmit(evt) {
     evt.preventDefault();
+
+    const user = localStorage.getItem("feedback-form-state");
+    console.log(JSON.parse(user));
+
     localStorage.clear();
     evt.currentTarget.reset()
-    console.log(obj);
 };
 
 
