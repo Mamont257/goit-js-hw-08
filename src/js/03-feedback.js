@@ -4,14 +4,21 @@ const form = document.querySelector('.feedback-form');
 // form.addEventListener("input", new Throttle(onInput, 1000));
 const obj = {};
 
-console.log(localStorage.getItem("feedback-form-state"));
+// console.dir(form.elements.email.value = "cee");
+// console.dir(form.elements.message.value = "def")
 
+const { email, message } = form.elements;
 
+// console.dir(email.value = "grg")
 
+// form[0].textContent = "Hello"
+const memory = localStorage.getItem("feedback-form-state");
 
-if (!localStorage.getItem("feedback-form-state")) {
+if (!memory) {
     form.addEventListener("input", new Throttle(onInput, 1000));
-};
+} else {
+    // const memory = localStorage.getItem("feedback-form-state");
+}
 
 
 function onInput(evt) {
