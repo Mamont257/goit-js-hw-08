@@ -1,17 +1,11 @@
 import Throttle from "lodash.throttle";
 
 const form = document.querySelector('.feedback-form');
-// form.addEventListener("input", new Throttle(onInput, 1000));
+form.addEventListener("submit", onSubmit);
 const obj = {};
-
-// console.dir(form.elements.email.value = "cee");
-// console.dir(form.elements.message.value = "def")
 
 const { email, message } = form.elements;
 
-// console.dir(email.value = "grg")
-
-// form[0].textContent = "Hello"
 const memory = localStorage.getItem("feedback-form-state");
 // console.log(memory);
 
@@ -37,6 +31,14 @@ function onInput(evt) {
     // console.log(obj);
     // console.log(localStorage.getItem("feedback-form-state"));
 };
+
+function onSubmit(evt) {
+    evt.preventDefault();
+    localStorage.clear();
+    evt.currentTarget.reset()
+    console.log(obj);
+};
+
 
 
 
