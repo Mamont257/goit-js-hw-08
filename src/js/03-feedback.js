@@ -16,7 +16,6 @@ if (!memory) {
     message.value = currentValue.message;
 }
 
-
 function onInput(evt) {
     if (evt.target.name === "email") {
         obj.email = evt.target.value.trim();
@@ -36,49 +35,6 @@ function onSubmit(evt) {
     localStorage.clear();
     evt.currentTarget.reset()
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function onSubmit(evt) {
-//     // evt.preventDefault();
-//     const { email, message } = evt.currentTarget;
-
-//     // email.value = "efffe";
-//     // console.dir(email.value);
-//     // console.log(message.value);
-
-//     obj.email = email.value;
-//     obj.message = message.value;
-//     // console.log(obj);
-//     localStorage.setItem("feedback-form-state", JSON.stringify(obj));
-// }
-
-
-// console.log(obj);
-
-// console.dir(form.children[0].tex);
-
 
 
 
