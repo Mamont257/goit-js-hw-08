@@ -13,11 +13,14 @@ const { email, message } = form.elements;
 
 // form[0].textContent = "Hello"
 const memory = localStorage.getItem("feedback-form-state");
+// console.log(memory);
 
 if (!memory) {
     form.addEventListener("input", new Throttle(onInput, 1000));
 } else {
-    // const memory = localStorage.getItem("feedback-form-state");
+    const currentValue = JSON.parse(memory);
+    email.value = currentValue.email;
+    message.value = currentValue.message;
 }
 
 
